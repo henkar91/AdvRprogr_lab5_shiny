@@ -19,3 +19,5 @@ df <- databycountry$new(api_key = "97c1f72e01dd5ba3",
                         years = 2010:2017)
 
 data <- df$result
+
+runGitHub("henkar91/AdvRprogr_lab5_shiny", ".zip")

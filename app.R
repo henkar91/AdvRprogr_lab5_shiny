@@ -1,7 +1,3 @@
-runShinyapp <- function(data){
-    library(shiny)
-    library(dplyr)
-    library(ggplot2)
     # Define UI for application that draws a histogram
     ui <- fluidPage(
         
@@ -26,12 +22,14 @@ runShinyapp <- function(data){
     
     # Server function
     server <- function(input, output) {
+        library(dplyr)
+        library(ggplot2)
         
         output$time_serie_plot <- renderPlot({
             if (length(input$input_country) == 0) {
                 
             } else {
-                plot_df <- data %>%
+                plot_df <- output %>%
                     filter(country %in% input$input_country,
                            dataset %in% input$input_dataset
                            #year %in% as.numeric(input$input_date_range)
@@ -53,6 +51,5 @@ runShinyapp <- function(data){
     # Run the application 
     shinyApp(ui = ui, server = server)
     
-}
 
 
