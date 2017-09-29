@@ -20,4 +20,4 @@ df <- databycountry$new(api_key = "97c1f72e01dd5ba3",
 
 data <- df$result
 
-runGitHub("henkar91/AdvRprogr_lab5_shiny", ".zip")
+runGitHub("henkar91/AdvRprogr_lab5_shiny")

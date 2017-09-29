@@ -7,6 +7,7 @@
         # Sidebar with parameters - data set
         sidebarLayout(
             sidebarPanel(
+                textInput(inputId = "df", label = "Specify name of data frame", value = ""),
                 selectInput(inputId = "input_dataset", label = "Choose data set", unique(data$dataset)),
                 checkboxGroupInput(inputId = "input_country", label = "Choose Country", unique(data$country))
                 # sliderInput(inputId = "input_date_range", label = "Select Years", min = min(resp$year), max = max(resp$year),
@@ -29,7 +30,7 @@
             if (length(input$input_country) == 0) {
                 
             } else {
-                plot_df <- data %>%
+                plot_df <- as.data.frame(input$df) %>%
                     filter(country %in% input$input_country,
                            dataset %in% input$input_dataset
                            #year %in% as.numeric(input$input_date_range)
