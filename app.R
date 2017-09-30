@@ -1,7 +1,7 @@
 devtools::install_github("henkar91/AdvRprogr_lab5")
 library(INQStatsR)
 df <- databycountry$new(api_key = "97c1f72e01dd5ba3", 
-                        country_code = c("se,no,dk,fi,us,de"), 
+                        country_code = c("se,no,dk,fi,lt,lv,ee,gb,ie"), 
                         data = c("population", 
                                  "bigmac_index",
                                  "death_rate",
@@ -72,5 +72,4 @@ df <- databycountry$new(api_key = "97c1f72e01dd5ba3",
     # Run the application 
     shinyApp(ui = ui, server = server)
     
-
 
