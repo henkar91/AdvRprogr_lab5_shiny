@@ -30,7 +30,7 @@
             if (length(input$input_country) == 0) {
                 
             } else {
-                plot_df <- as.data.frame(input$df) %>%
+                plot_df <- as.data.frame(eval(parse(text = input$df))) %>%
                     filter(country %in% input$input_country,
                            dataset %in% input$input_dataset
                            #year %in% as.numeric(input$input_date_range)
