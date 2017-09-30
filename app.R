@@ -15,7 +15,7 @@ df <- databycountry$new(api_key = "97c1f72e01dd5ba3",
                                  "corruption_index",
                                  "birth_rate",
                                  "electric_energy_consumption"), 
-                        years = 2010:2017)
+                        years = 2000:2017)
 
 
     # Define UI for application that draws a histogram
